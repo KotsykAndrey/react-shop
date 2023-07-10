@@ -15,7 +15,7 @@ function App() {
     <div className={`App ${isBasketShow ? 'open-cart' : ''}`}>
       <Header/>
         
-	    <Routes basename="/react-shop">
+	    <Routes>
         <Route path="/" element={<Main/>} />
         <Route path="/products/:id" element={<ProductPage/>} />
         
