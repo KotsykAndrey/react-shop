@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import { AppContext } from "../context";
 
 function Alert() {
-    const { title , closeAlert = Function.prototype } = useContext(AppContext);
+    const { alertName , closeAlert = Function.prototype } = useContext(AppContext);
 
     useEffect(() => {
         const timerId = setTimeout(closeAlert, 3000);
@@ -10,11 +10,11 @@ function Alert() {
         return () => {
             clearTimeout(timerId)
         }
-    },[title]);
+    },[alertName]);
 
     return (
         <div id="#toast-container">
-            <div className="toast">{title} has been added to cart!</div>
+            <div className="toast">{alertName} has been added to cart!</div>
         </div>
     )
 }
